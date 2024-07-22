@@ -8,6 +8,8 @@ function getTodosFromLocalStorage(){
 
 function saveTodo(event){
     const task = event.target.parentElement;
+    const donebtn = task.querySelector('.donebtn');
+    donebtn.disabled=false;
     console.log(task)
     const editedTitle = task.querySelector('.edit-title');
     const editedDes = task.querySelector('.edit-description');
@@ -33,6 +35,8 @@ function saveTodo(event){
 
 function trackTodo(event){
     const task = event.target.parentElement;
+    event.target.disabled=true;
+    task.querySelector('.editbtn').disabled=true;
     const tracker = task.querySelector('.tracker');
     tracker.classList.remove('editable');
     updateLocalStorage();
@@ -40,6 +44,8 @@ function trackTodo(event){
 
 function editTodo(event){
     const task = event.target.parentElement;
+    const donebtn = task.querySelector('.donebtn');
+    donebtn.disabled=true;
     console.log(task)
 
     const oldTitle = task.querySelector('.task-title');
@@ -132,6 +138,9 @@ function createTaskElement(title,description,completed){
     taskContainer.appendChild(task);
     if(completed){
         tracker.classList.remove('editable');
+        donebtn.disabled=true;
+        editbtn.disabled=true;
+
     }
 }    
 

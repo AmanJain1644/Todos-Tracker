@@ -2,6 +2,13 @@ html{
     background-color:#101729;
     font-family: cursive;
 }
+button:disabled{
+    /* background-color:#41703d; */
+    pointer-events: none;
+    cursor:not-allowed;
+    /* color: #b6c4e6; */
+    opacity:0.3;
+}
 #owner{
     margin: 0;
     color: white;
@@ -90,6 +97,7 @@ html{
 
 }
 .edit-title,.edit-description{
+    width: 600px;
     max-width:600px;
     display:block;
     background-color:#101729;
