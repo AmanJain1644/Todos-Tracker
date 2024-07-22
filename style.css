@@ -97,7 +97,7 @@ button:disabled{
 
 }
 .edit-title,.edit-description{
-    width: 600px;
+    width: 80%;
     max-width:600px;
     display:block;
     background-color:#101729;
@@ -207,6 +207,9 @@ button{
     }
     #owner{
         margin-left:120px;
+    }
+    .edit-title,.edit-description{
+        width: ;
     }
     
 }
