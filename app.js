@@ -10,10 +10,8 @@ function saveTodo(event){
     const task = event.target.parentElement;
     const donebtn = task.querySelector('.donebtn');
     donebtn.disabled=false;
-    console.log(task)
     const editedTitle = task.querySelector('.edit-title');
     const editedDes = task.querySelector('.edit-description');
-    console.log(editedDes,editedTitle)
     editedTitle.classList.add('editable');
 
     editedDes.classList.add('editable');
@@ -46,7 +44,6 @@ function editTodo(event){
     const task = event.target.parentElement;
     const donebtn = task.querySelector('.donebtn');
     donebtn.disabled=true;
-    console.log(task)
 
     const oldTitle = task.querySelector('.task-title');
     const oldDes = task.querySelector('.task-description');
@@ -76,8 +73,8 @@ function addTodo(){
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
 
-    if(!title || !description){
-        alert('please give title and description');
+    if(!title){
+        alert('please give title');
         return;
     }
     createTaskElement(title,description);
